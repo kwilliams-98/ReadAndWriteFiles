@@ -4,25 +4,31 @@
 #import csv
 import csv
 
-#open file
-infile = open('customers.csv', 'r')
+#define main
 
-#read contents into csv object
-csvfile = csv.reader(infile, delimiter = ',')
- 
-#skip the first row
+def main():
+    #open file
+    infile = open('customers.csv', 'r')
 
-next(csvfile)
-
-#build for loop 
-for record in csvfile: 
-    print('ID:', record[0]) 
-    print('First Name:', record[1])
-    print('Last Name:', record[2])
-    print('City:', record[3]) 
-    print('Country:', record [4])
-    print('Phone', record[5])
+    #read contents into csv object
+    csvfile = csv.reader(infile, delimiter = ',')
     
-    #establish input
+    #skip the first row
 
-    input()
+    next(csvfile)
+
+    #build for loop 
+    for record in csvfile: 
+        print('ID:', record[0]) 
+        print('First Name:', record[1])
+        print('Last Name:', record[2])
+        print('City:', record[3]) 
+        print('Country:', record [4])
+        print('Phone', record[5])
+        
+        #establish input
+
+        input()
+#call main 
+
+main()
