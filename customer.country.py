@@ -36,7 +36,8 @@ def main():
         counter += 1
 
     outfile.write(' ')
-    outfile.write('Total customers:' + ' ' +str(counter))
+    outfile.write('Total customers:' + ' ' +
+    str(counter))
     #close the outfile
     outfile.close()
 
