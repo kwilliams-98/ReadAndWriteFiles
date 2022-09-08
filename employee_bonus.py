@@ -18,12 +18,12 @@ def main():
 
     #build for loop 
     for line in csvfile: 
-        print('Employer ID:', line [0])
+        print('Employee ID:', line [0])
         print('Full Name:', line[1] + ' ' + line [2])
-        print('Salary:', line[3], ',')
+        print('Salary: $', format(int(line[3]), ','), sep='')
         print('Bonus:', line [4])
         totalpay = (float(line[3]) * float(line [4])) + float(line[3])
-        print('Total Pay:', format(totalpay, ',.2f'))
+        print('Total Pay: $', format(totalpay, ',.2f'), sep='')
 
         #establish pause
         input()

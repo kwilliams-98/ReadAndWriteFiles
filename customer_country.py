@@ -32,12 +32,18 @@ def main():
     counter = 1
 
     for line in csvfile:
+        #alt: full_name = line[1] + ' ' + line[2]
+        #alt: country = record [4]
+
         outfile.write(line[1]+ ' ' + line[2] + ',' + ' ' + line[4] + '\n')
+
+        #alt: outfile.write (full_ name + ' ' + country + '\n')
+
         counter += 1
 
     outfile.write(' ')
-    outfile.write('Total customers:' + ' ' +
-    str(counter))
+    outfile.write('Total customers:' + ' ' + str(counter))
+
     #close the outfile
     outfile.close()
 
