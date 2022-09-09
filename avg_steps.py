@@ -18,25 +18,30 @@ def main():
     next(csvfile)
 
     #build for loop 
+    
+    months = [['1','January'], ['2', 'February'], ['3', 'March'], ['4', 'April'], ['5','May'],['6','June'],['7','July'],['8','August'],['9','September'],['10','October'],['11','November'],['12','December']]
 
-    ###BUILD A LIST TO LOOP THROUGH! 
-    #[[1,January], [2, February], [3, March], [4, April], [5,May],[6,June],[7,July],[8,August],[9,September],[10,October],[11,November],[12,December]]
-    monthly_counter = 1
-    monthly_average = 0
+    monthly_counter = 0
+    monthly_bin = 0
     daily_counter = 0
+    average = 0
 
     for line in csvfile: 
-        monthly_value = int(line [0])
-        daily_value = int(line [1])
-        if monthly_value == monthly_counter:
-            daily_value += monthly_average
+        monthly_value = line [0]
+        daily_value = line [1]
+        if monthly_value == months[int(monthly_counter)][0]: 
+            monthly_bin = int(daily_value) + monthly_bin
             daily_counter += 1
-            #outfile.write(str(daily_value) + '\n')
         else: 
-            outfile.write('Month:' + str(monthly_average) + '\n')
-            monthly_counter += 1 
-    #close the outfile
+            average = int(monthly_bin) // int(daily_counter) 
+            outfile.write(months[monthly_counter][1] + ':' + ' ' + str(average) + '\n')
+            monthly_counter += 1
+            daily_counter = 0
+            average = 0
+            monthly_bin = 0
 
+    
+    #close the outfile
     outfile.close()
 
 #call main
